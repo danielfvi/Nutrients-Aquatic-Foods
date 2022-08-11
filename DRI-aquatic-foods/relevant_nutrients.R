@@ -3,8 +3,6 @@ library(tidyverse)
 library(ggplot2)
 
 ### import data 
-
-
 indir <- "DRI-aquatic-foods/data-raw/raw"
 outdir <- "DRI-aquatic-foods/data-raw/processed"
 
@@ -15,6 +13,11 @@ rdi_orig <- readRDS(file.path(indir,"dietary_reference_intake_data.Rds"))
 nutrient_key <- read.csv(file.path(indir,'nutrient_key.csv')) %>%
   select(-1)
 
+## rename AFCD combined nutrients
+
+# vitamin_a_combined (nutrient orig) = Vitamin A (nutrient)
+nutrients_afcd = afcd %>% select(nutrient, nutrient_orig) %>%
+  unique()
 
 ### functions
 # unit conversions: 
