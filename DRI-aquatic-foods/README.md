@@ -26,39 +26,10 @@ Relationship between files, if important:
 - USDA_cleaning generates one of the datasets that will be merged in relevant_nutrients.R
 
 
-
-METHODOLOGICAL INFORMATION
-
-Description of methods used for collection/generation of data: <include links or references to publications or other documentation containing experimental design or protocols used in data collection>
-
-Methods for processing the data: <describe how the submitted data were generated from the raw or collected data>
-
-Instrument- or software-specific information needed to interpret the data: <include full name and version of software, and any necessary packages or libraries needed to run scripts>
-
-Standards and calibration information, if appropriate: 
-
-Environmental/experimental conditions: 
-
-Describe any quality-assurance procedures performed on the data: 
-
-People involved with sample collection, processing, analysis and/or submission: 
-
-
-DATA-SPECIFIC INFORMATION FOR: [FILENAME]
-<repeat this section for each dataset, folder or file, as appropriate>
-
-Number of variables: 
-
-Number of cases/rows: 
-
-Variable List: <list variable name(s), description(s), unit(s) and value labels as appropriate for each>
-
-Missing data codes: <list code/symbol and definition>
-
-Specialized formats or other abbreviations used: 
-
-
 THINGS LEFT TO DO
 - Find missing nutrients in database that Chris Free used to creat RDI dataset 
 - Verify that nutrients/analysis methods are comparable across three source databases
 - DRI data is missing nutrients 
+- DRI data Protein use g/kg or g?, for now removing protein from DRI 
+- Add food part to USDA data (and other features in the AFCD)
+- facet by relevant taxa 
