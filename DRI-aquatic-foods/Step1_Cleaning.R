@@ -78,7 +78,6 @@ usda_raw_cleaned = usda_food_key_animal %>%
 usda_raw_cleaned_med = usda_raw_cleaned %>%
   group_by(animal_food_catg, nutrient, nutrient_units) %>%
   summarise(value=median(value)) %>%
-  rename(food_name=animal_food_catg) %>%
   merge(nutrient_key %>% filter(data_type=="USDA_name"), by="nutrient") %>% # merge nutrient key
   mutate(nutrient=PH_nutrient) %>% #rename nutrient
   select(-PH_nutrient) 

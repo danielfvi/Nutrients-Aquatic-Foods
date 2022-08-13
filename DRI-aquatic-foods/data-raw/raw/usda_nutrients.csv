@@ -1,4 +1,4 @@
-"","nutrient","food_name","nutrient_units","value","relevance","data_type"
+"","nutrient","animal_food_catg","nutrient_units","value","relevance","data_type"
 "1","Arginine","Beef","g",1.377,2,"USDA_name"
 "2","Arginine","Pork","g",1.317,2,"USDA_name"
 "3","Arginine","Poultry","g",1.183,2,"USDA_name"

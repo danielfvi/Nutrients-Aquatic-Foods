@@ -52,7 +52,7 @@ species_data2 %>%
 
 ### DRI: get upper and lower bounds for all RDI groups (can also change this code to find the mean)
 ref_ul = dri_data %>% 
-  filter(nutrient!="Protein") %>%
+  filter(nutrient_units!="g/kg" | nutrient!="Protein" ) %>%
   group_by(nutrient, dri_type) %>%
   mutate(
     max_ref = max(ref_value),
@@ -67,7 +67,7 @@ species_long = species_data2 %>%
   mutate(n = n()) %>%
   filter((data_type=="AFCD_name" & n>100) | data_type=="USDA_name") %>%
   merge(ref_ul, by=c("nutrient", "nutrient_units")) %>%
-  select(1:44, n, dri_type, nutrient_units, min_ref, max_ref, mean_ref) %>%
+  select(1:44, animal_food_catg, n, dri_type, nutrient_units, min_ref, max_ref, mean_ref) %>%
   mutate(ID = row_number(), 
          ref_proportion_lb = edible_value/max_ref,
          ref_proportion_ub = edible_value/min_ref,
@@ -75,10 +75,21 @@ species_long = species_data2 %>%
   select(-c(min_ref, max_ref, mean_ref)) %>%
   select(ID, everything()) 
 
-species_wide = species_long %>%
-  dcast(... ~ data_type, value.var=c("ref_proportion_lb", "ref_proportion_ub", "ref_proportion_mean")) 
-  #filter((data_type=="AFCD_name" & n>100) | data_type=="USDA_name") %>% #filter out data for AFCD only
+# species_wide = species_long %>%
+#   dcast(... ~ data_type, value.var=c("ref_proportion_lb", "ref_proportion_ub", "ref_proportion_mean")) %>%
+#   mutate(data_type=case_when(!is.na(ref_proportion_lb_AFCD_name) ~ "AFCD", TRUE ~ "USDA"))
 
-write.csv(species_wide, file.path(indir, "nutrients_combined.csv"))
+# unmerge datasets
+usda_data = species_long %>%
+  filter(data_type=="USDA_name") %>%
+  select(where(function(x) any(!is.na(x))))
+
+afcd_data = species_long %>%
+  filter(data_type=="AFCD_name") %>%
+  select(where(function(x) any(!is.na(x))))
+
+# write data
+write.csv(usda_data, file.path(indir, "usda_ear.csv"))
+write.csv(afcd_data, file.path(indir, "afcd_ear.csv"))
 
 
