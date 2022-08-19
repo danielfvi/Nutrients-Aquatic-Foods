@@ -23,11 +23,11 @@ Beal_et_al_2017 <- Beal_et_al_2017_orig[,c("Country", "Micronutrient", "Prevalen
 
 Passarelli2022 <- Passarelli2022_orig[,c("country", "nutrient", "sex_ar", "age_group_ar", "g_sev_ar")]
 
-Zhou_Liang_Iodine_Iron_zinc <- Zhou_Liang_Iodine_Iron_zinc_orig[,c("Country", "indmeta_text", "Val", "Year", "Age", "Gender", "Link")]
+Zhou_Liang_Iodine_Iron_zinc <- Zhou_Liang_Iodine_Iron_zinc_orig[,c("Country", "indmeta_text", "Val", "Theme_text", "Year", "Age", "Gender", "Link")]
 
-Zhou_Liang_Vitamins <- Zhou_Liang_Vitamins_orig[,c("Country", "Indmeta_text", "Val", "Year", "Age", "Gender", "Link")]
+Zhou_Liang_Vitamins <- Zhou_Liang_Vitamins_orig[,c("Country", "Indmeta_text", "Val", "Theme_text", "Year", "Age", "Gender", "Link")]
 
-Zhou_Liang_Pop_deficiencies <- Zhou_Liang_Pop_deficiencies_orig[,c("Country", "Indmeta_text", "Val", "Year", "Age", "Gender", "Link")]
+Zhou_Liang_Pop_deficiencies <- Zhou_Liang_Pop_deficiencies_orig[,c("Country", "Indmeta_text", "Val", "Theme_text", "Year", "Age", "Gender", "Link")]
                 
 ## Create new column with study_id and reference
 study_id <- "beal_et_al_2017"
@@ -55,9 +55,12 @@ Zhou_Liang_Iodine_Iron_zinc <- rename(Zhou_Liang_Iodine_Iron_zinc, Indmeta_text 
 Zhou_Liang_2021_Combined <- rbind(Zhou_Liang_Vitamins, Zhou_Liang_Iodine_Iron_zinc, Zhou_Liang_Pop_deficiencies)
 
 ## Change names of columns
-Zhou_Liang_2021_Combined <- (rename(Zhou_Liang_2021_Combined, Nutrient = Indmeta_text))
-Zhou_Liang_2021_Combined <- (rename(Zhou_Liang_2021_Combined, 'Prevalence of Inadequate Intake' = Val))
+Zhou_Liang_2021_Combined <- (rename(Zhou_Liang_2021_Combined, Nutrient = Theme_text))
+Zhou_Liang_2021_Combined <- (rename(Zhou_Liang_2021_Combined, Value = Val))
+Zhou_Liang_2021_Combined <- (rename(Zhou_Liang_2021_Combined, Variable = Indmeta_text))
+
 Beal_et_al_2017 <- (rename(Beal_et_al_2017, Nutrient = Micronutrient))
+Beal_et_al_2017 <- (rename(Beal_et_al_2017, Value = 'Prevalence of Inadequate Intake'))
 Passarelli2022 <- Passarelli2022 %>%
   #rename
   janitor::clean_names() %>%
@@ -65,7 +68,7 @@ Passarelli2022 <- Passarelli2022 %>%
          Nutrient = nutrient,
          Gender = sex_ar,
          Age = age_group_ar,
-         'Prevalence of Inadequate Intake' = g_sev_ar) 
+         Value = g_sev_ar) 
                         
 ## Add columns for merging
 Age <- NA
@@ -74,6 +77,8 @@ Gender <- NA
 Beal_et_al_2017$Gender <- Gender
 Link <- NA
 Beal_et_al_2017$Link <- Link
+Variable <- '% Population Inadequate Intake'
+Beal_et_al_2017$Variable <- Variable
 
 study_id <- "passarelli_2022"
 Passarelli2022$study_id <- study_id
@@ -84,12 +89,13 @@ Link <- NA
 Passarelli2022$Link <- Link
 Year <- NA
 Passarelli2022$Year <- Year
+Variable <- '% Population Inadequate Intake'
+Passarelli2022$Variable <- Variable
 
 # Arrange names
 nutrient_def_merged <- rbind(Zhou_Liang_2021_Combined, Beal_et_al_2017, Passarelli2022)
 
-# Change names
-nutrient_def_merged <- (rename(nutrient_def_merged, Value = 'Prevalence of Inadequate Intake'))
+
 
 ## Export datasets
 saveRDS(Zhou_Liang_2021_Combined, file.path(outdir, "Zhou_Liang_2021_Combined.Rds"))
