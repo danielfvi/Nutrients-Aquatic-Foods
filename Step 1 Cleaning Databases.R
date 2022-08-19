@@ -88,6 +88,8 @@ Passarelli2022$Year <- Year
 # Arrange names
 nutrient_def_merged <- rbind(Zhou_Liang_2021_Combined, Beal_et_al_2017, Passarelli2022)
 
+# Change names
+nutrient_def_merged <- (rename(nutrient_def_merged, Value = 'Prevalence of Inadequate Intake'))
 
 ## Export datasets
 saveRDS(Zhou_Liang_2021_Combined, file.path(outdir, "Zhou_Liang_2021_Combined.Rds"))
