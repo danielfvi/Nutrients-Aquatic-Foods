@@ -1,5 +1,7 @@
 library(tidyverse)
 
+# Clear workspace
+rm(list = ls())
 
 indir_FC <- "DRI-aquatic-foods/data-raw/raw/FoodData_Central_sr_legacy_food_csv_ 2019-04-02"
 indir <- "DRI-aquatic-foods/data-raw/raw"
@@ -21,7 +23,7 @@ usda_nutr_key = read.csv(file.path(indir_FC, "support/nutrient.csv"))
 usda_catg = read.csv(file.path(indir_FC, "support/food_category.csv")) 
 
 ## AFCD data
-afcd = readRDS(file.path(indir, "AFCD_data_sci.Rds")) ## LAST UPDATED 8/11/22 
+afcd = readRDS("~/AFCD/data-raw/processed/AFCD_data_taxa.Rds") ## LAST UPDATED 8/11/22 
 
 ## Nutrient key 
 # from: https://docs.google.com/spreadsheets/d/1p-bPfBcuVpRLMrJ4zixl-jmoj5yLezHJnptnlu66quk/edit#gid=2124066346

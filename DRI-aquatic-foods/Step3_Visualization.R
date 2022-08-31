@@ -2,6 +2,9 @@
 library(tidyverse)
 library(ggplot2)
 
+# Clear workspace
+rm(list = ls())
+
 ### import data 
 indir <- "DRI-aquatic-foods/data-raw/raw"
 outdir <- "DRI-aquatic-foods/data-raw/processed"
@@ -9,9 +12,9 @@ outdir <- "DRI-aquatic-foods/data-raw/processed"
 usda_nutrients <- read.csv(file.path(indir, "usda_ear.csv"))
 afcd_nutrients <- read.csv(file.path(indir, "afcd_ear.csv"))
 
-## Inspect nutrients matched
-nutrients %>%
-  select(c(nutrient, relevance, nutrient_units))
+# ## Inspect nutrients matched
+# nutrients %>%
+#   select(c(nutrient, relevance, nutrient_units))
 
 ## filter dri_type
 ## Get whole & muscle tissue data only

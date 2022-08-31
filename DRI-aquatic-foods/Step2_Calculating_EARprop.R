@@ -1,6 +1,9 @@
 library(tidyverse)
 library(maditr)
 
+# Clear workspace
+rm(list = ls())
+
 indir <- "DRI-aquatic-foods/data-raw/raw"
 outdir <- "DRI-aquatic-foods/data-raw/processed"
 
