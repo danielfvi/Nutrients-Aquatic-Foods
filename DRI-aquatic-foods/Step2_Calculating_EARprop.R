@@ -68,7 +68,7 @@ ref_ul = dri_data %>%
 species_long = species_data2 %>%
   group_by(nutrient, data_type) %>%
   mutate(n = n()) %>%
-  filter((data_type=="AFCD_name" & n>100) | data_type=="USDA_name") %>%
+  filter((data_type=="AFCD_name") | data_type=="USDA_name") %>%
   merge(ref_ul, by=c("nutrient", "nutrient_units")) %>%
   select(1:44, animal_food_catg, n, dri_type, nutrient_units, min_ref, max_ref, mean_ref) %>%
   mutate(ID = row_number(), 
