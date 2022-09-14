@@ -5,7 +5,7 @@ relevance,PH_nutrient,USDA_name,RDI_name,AFCD_name,Combined = for all sources ,"
 3,Iodine,,Iodine,Iodine,,
 3,Iron,"Iron, Fe",Iron,"Iron, total",,
 3,Selenium,"Selenium, Se",Selenium,Selenium,,
-3,Vitamin A,Vitamin A RAE,Vitamin A,Vitamin_a_combined,,
+3,Vitamin A,"Vitamin A, RAE",Vitamin A,Vitamin_a_combined,,
 3,Vitamin B12,Vitamin B-12,Vitamin B12,Vitamin B12,,
 3,Vitamin D,Vitamin D D2D3,Vitamin D,Vitamin D2,,
 3,Vitamin D,,,Vitamin D3,,

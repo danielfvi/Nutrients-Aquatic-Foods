@@ -1,0 +1,397 @@
+"","nutrient","nutrient_units","value_med","food_catg","max_value","cc","prop_value"
+"1","Arginine","mg",1210,"Aquatic Foods",1568,12,0.771683673469388
+"2","Calcium","mg",33,"Aquatic Foods",130.5,12,0.252873563218391
+"3","Copper","mg",0.08,"Aquatic Foods",0.8965,12,0.0892359174567764
+"4","Dietary fiber","g",0,"Aquatic Foods",15.4,12,0
+"5","Folate","mcg",11,"Aquatic Foods",394,12,0.0279187817258883
+"6","Histidine","mg",425,"Aquatic Foods",825,12,0.515151515151515
+"7","Iron","mg",0.8875,"Aquatic Foods",6.6,12,0.134469696969697
+"8","Leucine","mg",1424.885,"Aquatic Foods",1782,12,0.799598765432099
+"9","Lysine","mcg",1600,"Aquatic Foods",1822000,12,0.000878155872667398
+"10","Magnesium","mg",31,"Aquatic Foods",183,12,0.169398907103825
+"11","Methionine","mg",510,"Aquatic Foods",572,12,0.891608391608392
+"12","Monounsaturated fatty acids","g",0.3705984875,"Aquatic Foods",4,12,0.092649621875
+"13","Niacin","mg",3.4,"Aquatic Foods",6.1955,12,0.548785408764426
+"14","Phenylalanine","mg",729.06,"Aquatic Foods",1233,12,0.591289537712895
+"15","Phosphorus","mg",218,"Aquatic Foods",396.5,12,0.549810844892812
+"16","Potassium","mg",328,"Aquatic Foods",1250,12,0.2624
+"17","Proline","mg",705,"Aquatic Foods",1042,12,0.67658349328215
+"18","Riboflavin","mg",0.11,"Aquatic Foods",0.439,12,0.250569476082005
+"19","Saturated fatty acids","g",0.5,"Aquatic Foods",3.557,12,0.140567894292944
+"20","Selenium","mcg",31.4,"Aquatic Foods",36.5,12,0.86027397260274
+"21","Sodium","mg",78,"Aquatic Foods",138,12,0.565217391304348
+"22","Sugar","g",0,"Aquatic Foods",9.36,12,0
+"23","Threonine","mg",751.87,"Aquatic Foods",897,12,0.838205128205128
+"24","Tryptophan","mg",215.5,"Aquatic Foods",253,12,0.851778656126482
+"25","Valine","mg",899,"Aquatic Foods",1155.5,12,0.778018173950671
+"26","Vitamin A","mcg",17.4,"Aquatic Foods",160,12,0.10875
+"27","Vitamin B1","mg",0.07,"Aquatic Foods",0.6415,12,0.109119251753702
+"28","Vitamin B12","mcg",2.4,"Aquatic Foods",2.4,12,1
+"29","Vitamin B6","mg",0.2,"Aquatic Foods",0.486,12,0.411522633744856
+"30","Vitamin C","mg",1,"Aquatic Foods",26.3,12,0.0380228136882129
+"31","Vitamin E","mg",0.7,"Aquatic Foods",0.8,12,0.875
+"32","Vitamin K","mcg",0.1,"Aquatic Foods",14.55,12,0.00687285223367698
+"33","Zinc","mg",0.8,"Aquatic Foods",4.16,12,0.192307692307692
+"34","Arginine","mg",1145,"Aquatic Foods (USDA)",1568,12,0.730229591836735
+"35","Arginine","mg",1377,"Beef",1568,12,0.878188775510204
+"36","Arginine","mg",569,"Cereal Grains",1568,12,0.362882653061224
+"37","Arginine","mg",812,"Dairy and Egg",1568,12,0.517857142857143
+"38","Arginine","mg",31,"Fruits",1568,12,0.0197704081632653
+"39","Arginine","mg",1568,"Legumes",1568,12,1
+"40","Arginine","mg",483.5,"Nut and Seed",1568,12,0.308354591836735
+"41","Arginine","mg",1317,"Pork",1568,12,0.839923469387755
+"42","Arginine","mg",1205,"Poultry",1568,12,0.768494897959184
+"43","Arginine","mg",96.5,"Vegetables",1568,12,0.0615433673469388
+"44","Arginine","mg",98.5,"Vegetables (without potatoes)",1568,12,0.0628188775510204
+"45","Calcium","mg",25,"Aquatic Foods (USDA)",130.5,12,0.191570881226054
+"46","Calcium","mg",12,"Beef",130.5,12,0.0919540229885057
+"47","Calcium","mg",21,"Cereal Grains",130.5,12,0.160919540229885
+"48","Calcium","mg",113,"Dairy and Egg",130.5,12,0.865900383141762
+"49","Calcium","mg",12.5,"Fruits",130.5,12,0.0957854406130268
+"50","Calcium","mg",130.5,"Legumes",130.5,12,1
+"51","Calcium","mg",33.5,"Nut and Seed",130.5,12,0.256704980842912
+"52","Calcium","mg",12,"Pork",130.5,12,0.0919540229885057
+"53","Calcium","mg",11,"Poultry",130.5,12,0.0842911877394636
+"54","Calcium","mg",34,"Vegetables",130.5,12,0.260536398467433
+"55","Calcium","mg",35.5,"Vegetables (without potatoes)",130.5,12,0.272030651340996
+"56","Copper","mg",0.054,"Aquatic Foods (USDA)",0.8965,12,0.060234244283324
+"57","Copper","mg",0.073,"Beef",0.8965,12,0.0814277746793084
+"58","Copper","mg",0.277,"Cereal Grains",0.8965,12,0.308979364194088
+"59","Copper","mg",0.053,"Dairy and Egg",0.8965,12,0.0591187953151143
+"60","Copper","mg",0.067,"Fruits",0.8965,12,0.0747350808700502
+"61","Copper","mg",0.8965,"Legumes",0.8965,12,1
+"62","Copper","mg",0.5045,"Nut and Seed",0.8965,12,0.562744004461796
+"63","Copper","mg",0.072,"Pork",0.8965,12,0.0803123257110987
+"64","Copper","mg",0.077,"Poultry",0.8965,12,0.0858895705521472
+"65","Copper","mg",0.107,"Vegetables",0.8965,12,0.119353039598438
+"66","Copper","mg",0.106,"Vegetables (without potatoes)",0.8965,12,0.118237590630229
+"67","Dietary fiber","g",0,"Aquatic Foods (USDA)",15.4,12,0
+"68","Dietary fiber","g",0,"Beef",15.4,12,0
+"69","Dietary fiber","g",3.6,"Cereal Grains",15.4,12,0.233766233766234
+"70","Dietary fiber","g",0,"Dairy and Egg",15.4,12,0
+"71","Dietary fiber","g",2.4,"Fruits",15.4,12,0.155844155844156
+"72","Dietary fiber","g",15.4,"Legumes",15.4,12,1
+"73","Dietary fiber","g",8.1,"Nut and Seed",15.4,12,0.525974025974026
+"74","Dietary fiber","g",0,"Pork",15.4,12,0
+"75","Dietary fiber","g",0,"Poultry",15.4,12,0
+"76","Dietary fiber","g",2.3,"Vegetables",15.4,12,0.149350649350649
+"77","Dietary fiber","g",2.3,"Vegetables (without potatoes)",15.4,12,0.149350649350649
+"78","Folate","mcg",10,"Aquatic Foods (USDA)",394,12,0.0253807106598985
+"79","Folate","mcg",4,"Beef",394,12,0.0101522842639594
+"80","Folate","mcg",23,"Cereal Grains",394,12,0.0583756345177665
+"81","Folate","mcg",66,"Dairy and Egg",394,12,0.16751269035533
+"82","Folate","mcg",12,"Fruits",394,12,0.0304568527918782
+"83","Folate","mcg",394,"Legumes",394,12,1
+"84","Folate","mcg",52,"Nut and Seed",394,12,0.131979695431472
+"85","Folate","mcg",0,"Pork",394,12,0
+"86","Folate","mcg",7,"Poultry",394,12,0.0177664974619289
+"87","Folate","mcg",30,"Vegetables",394,12,0.0761421319796954
+"88","Folate","mcg",34,"Vegetables (without potatoes)",394,12,0.0862944162436548
+"89","Histidine","mg",529,"Aquatic Foods (USDA)",825,12,0.641212121212121
+"90","Histidine","mg",701,"Beef",825,12,0.84969696969697
+"91","Histidine","mg",190,"Cereal Grains",825,12,0.23030303030303
+"92","Histidine","mg",315,"Dairy and Egg",825,12,0.381818181818182
+"93","Histidine","mg",10,"Fruits",825,12,0.0121212121212121
+"94","Histidine","mg",654,"Legumes",825,12,0.792727272727273
+"95","Histidine","mg",108.5,"Nut and Seed",825,12,0.131515151515152
+"96","Histidine","mg",825,"Pork",825,12,1
+"97","Histidine","mg",549,"Poultry",825,12,0.665454545454545
+"98","Histidine","mg",34,"Vegetables",825,12,0.0412121212121212
+"99","Histidine","mg",34,"Vegetables (without potatoes)",825,12,0.0412121212121212
+"100","Iron","mg",0.59,"Aquatic Foods (USDA)",6.6,12,0.0893939393939394
+"101","Iron","mg",1.98,"Beef",6.6,12,0.3
+"102","Iron","mg",1.96,"Cereal Grains",6.6,12,0.296969696969697
+"103","Iron","mg",1.74,"Dairy and Egg",6.6,12,0.263636363636364
+"104","Iron","mg",0.26,"Fruits",6.6,12,0.0393939393939394
+"105","Iron","mg",6.6,"Legumes",6.6,12,1
+"106","Iron","mg",1.865,"Nut and Seed",6.6,12,0.282575757575758
+"107","Iron","mg",0.84,"Pork",6.6,12,0.127272727272727
+"108","Iron","mg",1.085,"Poultry",6.6,12,0.164393939393939
+"109","Iron","mg",0.81,"Vegetables",6.6,12,0.122727272727273
+"110","Iron","mg",0.82,"Vegetables (without potatoes)",6.6,12,0.124242424242424
+"111","Leucine","mg",1502,"Aquatic Foods (USDA)",1782,12,0.84287317620651
+"112","Leucine","mg",1691,"Beef",1782,12,0.948933782267116
+"113","Leucine","mg",620,"Cereal Grains",1782,12,0.347923681257015
+"114","Leucine","mg",1097,"Dairy and Egg",1782,12,0.615600448933782
+"115","Leucine","mg",25,"Fruits",1782,12,0.0140291806958474
+"116","Leucine","mg",1782,"Legumes",1782,12,1
+"117","Leucine","mg",321,"Nut and Seed",1782,12,0.18013468013468
+"118","Leucine","mg",1669,"Pork",1782,12,0.93658810325477
+"119","Leucine","mg",1477,"Poultry",1782,12,0.828843995510662
+"120","Leucine","mg",105,"Vegetables",1782,12,0.0589225589225589
+"121","Leucine","mg",105,"Vegetables (without potatoes)",1782,12,0.0589225589225589
+"122","Lysine","mcg",1694000,"Aquatic Foods (USDA)",1822000,12,0.929747530186608
+"123","Lysine","mcg",1822000,"Beef",1822000,12,1
+"124","Lysine","mcg",258000,"Cereal Grains",1822000,12,0.141602634467618
+"125","Lysine","mcg",912000,"Dairy and Egg",1822000,12,0.500548847420417
+"126","Lysine","mcg",27000,"Fruits",1822000,12,0.0148188803512623
+"127","Lysine","mcg",1534000,"Legumes",1822000,12,0.841931942919868
+"128","Lysine","mcg",217000,"Nut and Seed",1822000,12,0.119099890230516
+"129","Lysine","mcg",1803000,"Pork",1822000,12,0.989571899012075
+"130","Lysine","mcg",1657000,"Poultry",1822000,12,0.909440175631175
+"131","Lysine","mcg",89000,"Vegetables",1822000,12,0.048847420417124
+"132","Lysine","mcg",89000,"Vegetables (without potatoes)",1822000,12,0.048847420417124
+"133","Magnesium","mg",30,"Aquatic Foods (USDA)",183,12,0.163934426229508
+"134","Magnesium","mg",20,"Beef",183,12,0.109289617486339
+"135","Magnesium","mg",79,"Cereal Grains",183,12,0.431693989071038
+"136","Magnesium","mg",11,"Dairy and Egg",183,12,0.0601092896174863
+"137","Magnesium","mg",11,"Fruits",183,12,0.0601092896174863
+"138","Magnesium","mg",183,"Legumes",183,12,1
+"139","Magnesium","mg",55,"Nut and Seed",183,12,0.300546448087432
+"140","Magnesium","mg",21,"Pork",183,12,0.114754098360656
+"141","Magnesium","mg",22,"Poultry",183,12,0.120218579234973
+"142","Magnesium","mg",23,"Vegetables",183,12,0.12568306010929
+"143","Magnesium","mg",23,"Vegetables (without potatoes)",183,12,0.12568306010929
+"144","Methionine","mg",547,"Aquatic Foods (USDA)",572,12,0.956293706293706
+"145","Methionine","mg",572,"Beef",572,12,1
+"146","Methionine","mg",169,"Cereal Grains",572,12,0.295454545454545
+"147","Methionine","mg",378,"Dairy and Egg",572,12,0.660839160839161
+"148","Methionine","mg",6,"Fruits",572,12,0.0104895104895105
+"149","Methionine","mg",316,"Legumes",572,12,0.552447552447552
+"150","Methionine","mg",65,"Nut and Seed",572,12,0.113636363636364
+"151","Methionine","mg",547,"Pork",572,12,0.956293706293706
+"152","Methionine","mg",519,"Poultry",572,12,0.907342657342657
+"153","Methionine","mg",20,"Vegetables",572,12,0.034965034965035
+"154","Methionine","mg",20,"Vegetables (without potatoes)",572,12,0.034965034965035
+"155","Monounsaturated fatty acids","g",0.507,"Aquatic Foods (USDA)",4,12,0.12675
+"156","Monounsaturated fatty acids","g",3.393,"Beef",4,12,0.84825
+"157","Monounsaturated fatty acids","g",0.206,"Cereal Grains",4,12,0.0515
+"158","Monounsaturated fatty acids","g",4,"Dairy and Egg",4,12,1
+"159","Monounsaturated fatty acids","g",0.037,"Fruits",4,12,0.00925
+"160","Monounsaturated fatty acids","g",0.1335,"Legumes",4,12,0.033375
+"161","Monounsaturated fatty acids","g",0.897,"Nut and Seed",4,12,0.22425
+"162","Monounsaturated fatty acids","g",3.408,"Pork",4,12,0.852
+"163","Monounsaturated fatty acids","g",1.54,"Poultry",4,12,0.385
+"164","Monounsaturated fatty acids","g",0.0205,"Vegetables",4,12,0.005125
+"165","Monounsaturated fatty acids","g",0.023,"Vegetables (without potatoes)",4,12,0.00575
+"166","Niacin","mg",2.3,"Aquatic Foods (USDA)",6.1955,12,0.371237188281817
+"167","Niacin","mg",4.887,"Beef",6.1955,12,0.788798321362279
+"168","Niacin","mg",4.308,"Cereal Grains",6.1955,12,0.695343394399161
+"169","Niacin","mg",0.092,"Dairy and Egg",6.1955,12,0.0148494875312727
+"170","Niacin","mg",0.349,"Fruits",6.1955,12,0.0563312081349366
+"171","Niacin","mg",2.0945,"Legumes",6.1955,12,0.338067952546203
+"172","Niacin","mg",1.082,"Nut and Seed",6.1955,12,0.17464288596562
+"173","Niacin","mg",5.338,"Pork",6.1955,12,0.861593091760149
+"174","Niacin","mg",6.1955,"Poultry",6.1955,12,1
+"175","Niacin","mg",0.7,"Vegetables",6.1955,12,0.112985231216205
+"176","Niacin","mg",0.6725,"Vegetables (without potatoes)",6.1955,12,0.10854652570414
+"177","Phenylalanine","mg",735,"Aquatic Foods (USDA)",1233,12,0.596107055961071
+"178","Phenylalanine","mg",821,"Beef",1233,12,0.665855636658556
+"179","Phenylalanine","mg",387,"Cereal Grains",1233,12,0.313868613138686
+"180","Phenylalanine","mg",675,"Dairy and Egg",1233,12,0.547445255474453
+"181","Phenylalanine","mg",20,"Fruits",1233,12,0.016220600162206
+"182","Phenylalanine","mg",1233,"Legumes",1233,12,1
+"183","Phenylalanine","mg",198,"Nut and Seed",1233,12,0.160583941605839
+"184","Phenylalanine","mg",842,"Pork",1233,12,0.682887266828873
+"185","Phenylalanine","mg",730,"Poultry",1233,12,0.592051905920519
+"186","Phenylalanine","mg",66.5,"Vegetables",1233,12,0.053933495539335
+"187","Phenylalanine","mg",65,"Vegetables (without potatoes)",1233,12,0.0527169505271695
+"188","Phosphorus","mg",210,"Aquatic Foods (USDA)",396.5,12,0.529634300126103
+"189","Phosphorus","mg",198,"Beef",396.5,12,0.49936948297604
+"190","Phosphorus","mg",221,"Cereal Grains",396.5,12,0.557377049180328
+"191","Phosphorus","mg",193,"Dairy and Egg",396.5,12,0.486759142496847
+"192","Phosphorus","mg",16.5,"Fruits",396.5,12,0.0416141235813367
+"193","Phosphorus","mg",396.5,"Legumes",396.5,12,1
+"194","Phosphorus","mg",117.5,"Nut and Seed",396.5,12,0.296343001261034
+"195","Phosphorus","mg",207,"Pork",396.5,12,0.522068095838588
+"196","Phosphorus","mg",184.5,"Poultry",396.5,12,0.465321563682219
+"197","Phosphorus","mg",50,"Vegetables",396.5,12,0.126103404791929
+"198","Phosphorus","mg",49,"Vegetables (without potatoes)",396.5,12,0.123581336696091
+"199","Potassium","mg",350,"Aquatic Foods (USDA)",1250,12,0.28
+"200","Potassium","mg",316,"Beef",1250,12,0.2528
+"201","Potassium","mg",195,"Cereal Grains",1250,12,0.156
+"202","Potassium","mg",140,"Dairy and Egg",1250,12,0.112
+"203","Potassium","mg",177,"Fruits",1250,12,0.1416
+"204","Potassium","mg",1250,"Legumes",1250,12,1
+"205","Potassium","mg",465.5,"Nut and Seed",1250,12,0.3724
+"206","Potassium","mg",341,"Pork",1250,12,0.2728
+"207","Potassium","mg",228.5,"Poultry",1250,12,0.1828
+"208","Potassium","mg",318,"Vegetables",1250,12,0.2544
+"209","Potassium","mg",313,"Vegetables (without potatoes)",1250,12,0.2504
+"210","Proline","mg",658,"Aquatic Foods (USDA)",1042,12,0.63147792706334
+"211","Proline","mg",910,"Beef",1042,12,0.873320537428023
+"212","Proline","mg",352,"Cereal Grains",1042,12,0.337811900191939
+"213","Proline","mg",497,"Dairy and Egg",1042,12,0.476967370441459
+"214","Proline","mg",29,"Fruits",1042,12,0.027831094049904
+"215","Proline","mg",1042,"Legumes",1042,12,1
+"216","Proline","mg",271.5,"Nut and Seed",1042,12,0.260556621880998
+"217","Proline","mg",838.5,"Pork",1042,12,0.804702495201535
+"218","Proline","mg",923,"Poultry",1042,12,0.885796545105566
+"219","Proline","mg",63,"Vegetables",1042,12,0.0604606525911708
+"220","Proline","mg",67,"Vegetables (without potatoes)",1042,12,0.064299424184261
+"221","Riboflavin","mg",0.1,"Aquatic Foods (USDA)",0.439,12,0.227790432801822
+"222","Riboflavin","mg",0.18,"Beef",0.439,12,0.41002277904328
+"223","Riboflavin","mg",0.049,"Cereal Grains",0.439,12,0.111617312072893
+"224","Riboflavin","mg",0.439,"Dairy and Egg",0.439,12,1
+"225","Riboflavin","mg",0.032,"Fruits",0.439,12,0.0728929384965831
+"226","Riboflavin","mg",0.214,"Legumes",0.439,12,0.4874715261959
+"227","Riboflavin","mg",0.104,"Nut and Seed",0.439,12,0.236902050113895
+"228","Riboflavin","mg",0.254,"Pork",0.439,12,0.578587699316629
+"229","Riboflavin","mg",0.1955,"Poultry",0.439,12,0.445330296127563
+"230","Riboflavin","mg",0.087,"Vegetables",0.439,12,0.198177676537585
+"231","Riboflavin","mg",0.09,"Vegetables (without potatoes)",0.439,12,0.20501138952164
+"232","Saturated fatty acids","g",0.443,"Aquatic Foods (USDA)",3.557,12,0.124543154343548
+"233","Saturated fatty acids","g",2.979,"Beef",3.557,12,0.837503514197357
+"234","Saturated fatty acids","g",0.18,"Cereal Grains",3.557,12,0.0506044419454597
+"235","Saturated fatty acids","g",3.557,"Dairy and Egg",3.557,12,1
+"236","Saturated fatty acids","g",0.034,"Fruits",3.557,12,0.00955861681192016
+"237","Saturated fatty acids","g",0.3305,"Legumes",3.557,12,0.0929153781276357
+"238","Saturated fatty acids","g",2.3055,"Nut and Seed",3.557,12,0.648158560584762
+"239","Saturated fatty acids","g",2.645,"Pork",3.557,12,0.743604160809671
+"240","Saturated fatty acids","g",1.46,"Poultry",3.557,12,0.410458251335395
+"241","Saturated fatty acids","g",0.046,"Vegetables",3.557,12,0.0129322462749508
+"242","Saturated fatty acids","g",0.047,"Vegetables (without potatoes)",3.557,12,0.0132133820635367
+"243","Selenium","mcg",36.5,"Aquatic Foods (USDA)",36.5,12,1
+"244","Selenium","mcg",22.4,"Beef",36.5,12,0.613698630136986
+"245","Selenium","mcg",15.1,"Cereal Grains",36.5,12,0.413698630136986
+"246","Selenium","mcg",31.35,"Dairy and Egg",36.5,12,0.858904109589041
+"247","Selenium","mcg",0.3,"Fruits",36.5,12,0.00821917808219178
+"248","Selenium","mcg",8.2,"Legumes",36.5,12,0.224657534246575
+"249","Selenium","mcg",7,"Nut and Seed",36.5,12,0.191780821917808
+"250","Selenium","mcg",29.4,"Pork",36.5,12,0.805479452054794
+"251","Selenium","mcg",20.65,"Poultry",36.5,12,0.565753424657534
+"252","Selenium","mcg",0.7,"Vegetables",36.5,12,0.0191780821917808
+"253","Selenium","mcg",0.7,"Vegetables (without potatoes)",36.5,12,0.0191780821917808
+"254","Sodium","mg",70,"Aquatic Foods (USDA)",138,12,0.507246376811594
+"255","Sodium","mg",58,"Beef",138,12,0.420289855072464
+"256","Sodium","mg",5,"Cereal Grains",138,12,0.036231884057971
+"257","Sodium","mg",138,"Dairy and Egg",138,12,1
+"258","Sodium","mg",2,"Fruits",138,12,0.0144927536231884
+"259","Sodium","mg",13,"Legumes",138,12,0.0942028985507246
+"260","Sodium","mg",6,"Nut and Seed",138,12,0.0434782608695652
+"261","Sodium","mg",63,"Pork",138,12,0.456521739130435
+"262","Sodium","mg",77,"Poultry",138,12,0.557971014492754
+"263","Sodium","mg",13,"Vegetables",138,12,0.0942028985507246
+"264","Sodium","mg",13,"Vegetables (without potatoes)",138,12,0.0942028985507246
+"265","Sugar","g",0,"Aquatic Foods (USDA)",9.36,12,0
+"266","Sugar","g",0,"Beef",9.36,12,0
+"267","Sugar","g",0.73,"Cereal Grains",9.36,12,0.077991452991453
+"268","Sugar","g",0.71,"Dairy and Egg",9.36,12,0.0758547008547008
+"269","Sugar","g",9.36,"Fruits",9.36,12,1
+"270","Sugar","g",3.51,"Legumes",9.36,12,0.375
+"271","Sugar","g",5.91,"Nut and Seed",9.36,12,0.631410256410256
+"272","Sugar","g",0,"Pork",9.36,12,0
+"273","Sugar","g",0,"Poultry",9.36,12,0
+"274","Sugar","g",2.19,"Vegetables",9.36,12,0.233974358974359
+"275","Sugar","g",2.2,"Vegetables (without potatoes)",9.36,12,0.235042735042735
+"276","Threonine","mg",810,"Aquatic Foods (USDA)",897,12,0.903010033444816
+"277","Threonine","mg",884,"Beef",897,12,0.985507246376812
+"278","Threonine","mg",275,"Cereal Grains",897,12,0.306577480490524
+"279","Threonine","mg",556,"Dairy and Egg",897,12,0.61984392419175
+"280","Threonine","mg",16,"Fruits",897,12,0.0178372352285396
+"281","Threonine","mg",895,"Legumes",897,12,0.997770345596433
+"282","Threonine","mg",216,"Nut and Seed",897,12,0.240802675585284
+"283","Threonine","mg",897,"Pork",897,12,1
+"284","Threonine","mg",786,"Poultry",897,12,0.876254180602007
+"285","Threonine","mg",69,"Vegetables",897,12,0.0769230769230769
+"286","Threonine","mg",69,"Vegetables (without potatoes)",897,12,0.0769230769230769
+"287","Tryptophan","mg",211,"Aquatic Foods (USDA)",253,12,0.83399209486166
+"288","Tryptophan","mg",216,"Beef",253,12,0.853754940711462
+"289","Tryptophan","mg",96,"Cereal Grains",253,12,0.379446640316206
+"290","Tryptophan","mg",190,"Dairy and Egg",253,12,0.75098814229249
+"291","Tryptophan","mg",7,"Fruits",253,12,0.0276679841897233
+"292","Tryptophan","mg",253,"Legumes",253,12,1
+"293","Tryptophan","mg",63,"Nut and Seed",253,12,0.24901185770751
+"294","Tryptophan","mg",225,"Pork",253,12,0.889328063241107
+"295","Tryptophan","mg",209,"Poultry",253,12,0.826086956521739
+"296","Tryptophan","mg",20,"Vegetables",253,12,0.0790513833992095
+"297","Tryptophan","mg",20,"Vegetables (without potatoes)",253,12,0.0790513833992095
+"298","Valine","mg",950,"Aquatic Foods (USDA)",1155.5,12,0.822154911293812
+"299","Valine","mg",1001,"Beef",1155.5,12,0.866291648636954
+"300","Valine","mg",440,"Cereal Grains",1155.5,12,0.380787537862397
+"301","Valine","mg",809,"Dairy and Egg",1155.5,12,0.700129813933362
+"302","Valine","mg",19.5,"Fruits",1155.5,12,0.0168758113370835
+"303","Valine","mg",1155.5,"Legumes",1155.5,12,1
+"304","Valine","mg",274.5,"Nut and Seed",1155.5,12,0.237559498052791
+"305","Valine","mg",1055,"Pork",1155.5,12,0.913024664647339
+"306","Valine","mg",862,"Poultry",1155.5,12,0.745997403721333
+"307","Valine","mg",84,"Vegetables",1155.5,12,0.0726958026828213
+"308","Valine","mg",84,"Vegetables (without potatoes)",1155.5,12,0.0726958026828213
+"309","Vitamin A","mcg",27.5,"Aquatic Foods (USDA)",160,12,0.171875
+"310","Vitamin A","mcg",2,"Beef",160,12,0.0125
+"311","Vitamin A","mcg",0,"Cereal Grains",160,12,0
+"312","Vitamin A","mcg",160,"Dairy and Egg",160,12,1
+"313","Vitamin A","mcg",3,"Fruits",160,12,0.01875
+"314","Vitamin A","mcg",0,"Legumes",160,12,0
+"315","Vitamin A","mcg",1.5,"Nut and Seed",160,12,0.009375
+"316","Vitamin A","mcg",1,"Pork",160,12,0.00625
+"317","Vitamin A","mcg",17.5,"Poultry",160,12,0.109375
+"318","Vitamin A","mcg",17,"Vegetables",160,12,0.10625
+"319","Vitamin A","mcg",18,"Vegetables (without potatoes)",160,12,0.1125
+"320","Vitamin B1","mg",0.075,"Aquatic Foods (USDA)",0.6415,12,0.116913484021824
+"321","Vitamin B1","mg",0.074,"Beef",0.6415,12,0.1153546375682
+"322","Vitamin B1","mg",0.413,"Cereal Grains",0.6415,12,0.643803585346843
+"323","Vitamin B1","mg",0.067,"Dairy and Egg",0.6415,12,0.104442712392829
+"324","Vitamin B1","mg",0.03,"Fruits",0.6415,12,0.0467653936087295
+"325","Vitamin B1","mg",0.6415,"Legumes",0.6415,12,1
+"326","Vitamin B1","mg",0.1955,"Nut and Seed",0.6415,12,0.304754481683554
+"327","Vitamin B1","mg",0.518,"Pork",0.6415,12,0.807482462977397
+"328","Vitamin B1","mg",0.0695,"Poultry",0.6415,12,0.10833982852689
+"329","Vitamin B1","mg",0.07,"Vegetables",0.6415,12,0.109119251753702
+"330","Vitamin B1","mg",0.0695,"Vegetables (without potatoes)",0.6415,12,0.10833982852689
+"331","Vitamin B12","mcg",2.03,"Aquatic Foods (USDA)",2.4,12,0.845833333333333
+"332","Vitamin B12","mcg",2.1,"Beef",2.4,12,0.875
+"333","Vitamin B12","mcg",0,"Cereal Grains",2.4,12,0
+"334","Vitamin B12","mcg",1.21,"Dairy and Egg",2.4,12,0.504166666666667
+"335","Vitamin B12","mcg",0,"Fruits",2.4,12,0
+"336","Vitamin B12","mcg",0,"Legumes",2.4,12,0
+"337","Vitamin B12","mcg",0,"Nut and Seed",2.4,12,0
+"338","Vitamin B12","mcg",0.56,"Pork",2.4,12,0.233333333333333
+"339","Vitamin B12","mcg",0.675,"Poultry",2.4,12,0.28125
+"340","Vitamin B12","mcg",0,"Vegetables",2.4,12,0
+"341","Vitamin B12","mcg",0,"Vegetables (without potatoes)",2.4,12,0
+"342","Vitamin B6","mg",0.273,"Aquatic Foods (USDA)",0.486,12,0.561728395061728
+"343","Vitamin B6","mg",0.475,"Beef",0.486,12,0.977366255144033
+"344","Vitamin B6","mg",0.171,"Cereal Grains",0.486,12,0.351851851851852
+"345","Vitamin B6","mg",0.17,"Dairy and Egg",0.486,12,0.349794238683128
+"346","Vitamin B6","mg",0.0535,"Fruits",0.486,12,0.110082304526749
+"347","Vitamin B6","mg",0.366,"Legumes",0.486,12,0.753086419753086
+"348","Vitamin B6","mg",0.324,"Nut and Seed",0.486,12,0.666666666666667
+"349","Vitamin B6","mg",0.486,"Pork",0.486,12,1
+"350","Vitamin B6","mg",0.477,"Poultry",0.486,12,0.981481481481482
+"351","Vitamin B6","mg",0.144,"Vegetables",0.486,12,0.296296296296296
+"352","Vitamin B6","mg",0.138,"Vegetables (without potatoes)",0.486,12,0.283950617283951
+"353","Vitamin C","mg",0,"Aquatic Foods (USDA)",26.3,12,0
+"354","Vitamin C","mg",0,"Beef",26.3,12,0
+"355","Vitamin C","mg",0,"Cereal Grains",26.3,12,0
+"356","Vitamin C","mg",0,"Dairy and Egg",26.3,12,0
+"357","Vitamin C","mg",26.3,"Fruits",26.3,12,1
+"358","Vitamin C","mg",0.1,"Legumes",26.3,12,0.00380228136882129
+"359","Vitamin C","mg",4.45,"Nut and Seed",26.3,12,0.169201520912548
+"360","Vitamin C","mg",0,"Pork",26.3,12,0
+"361","Vitamin C","mg",0,"Poultry",26.3,12,0
+"362","Vitamin C","mg",17.95,"Vegetables",26.3,12,0.682509505703422
+"363","Vitamin C","mg",18.8,"Vegetables (without potatoes)",26.3,12,0.714828897338403
+"364","Vitamin E","mg",0.745,"Aquatic Foods (USDA)",0.8,12,0.93125
+"365","Vitamin E","mg",0.22,"Beef",0.8,12,0.275
+"366","Vitamin E","mg",0.11,"Cereal Grains",0.8,12,0.1375
+"367","Vitamin E","mg",0.8,"Dairy and Egg",0.8,12,1
+"368","Vitamin E","mg",0.18,"Fruits",0.8,12,0.225
+"369","Vitamin E","mg",0.22,"Legumes",0.8,12,0.275
+"370","Vitamin E","mg",0.54,"Nut and Seed",0.8,12,0.675
+"371","Vitamin E","mg",0.19,"Pork",0.8,12,0.2375
+"372","Vitamin E","mg",0.2,"Poultry",0.8,12,0.25
+"373","Vitamin E","mg",0.3,"Vegetables",0.8,12,0.375
+"374","Vitamin E","mg",0.35,"Vegetables (without potatoes)",0.8,12,0.4375
+"375","Vitamin K","mcg",0.1,"Aquatic Foods (USDA)",14.55,12,0.00687285223367698
+"376","Vitamin K","mcg",1.5,"Beef",14.55,12,0.103092783505155
+"377","Vitamin K","mcg",0.9,"Cereal Grains",14.55,12,0.0618556701030928
+"378","Vitamin K","mcg",0.3,"Dairy and Egg",14.55,12,0.0206185567010309
+"379","Vitamin K","mcg",2.15,"Fruits",14.55,12,0.147766323024055
+"380","Vitamin K","mcg",5.6,"Legumes",14.55,12,0.384879725085911
+"381","Vitamin K","mcg",0.2,"Nut and Seed",14.55,12,0.013745704467354
+"382","Vitamin K","mcg",0,"Pork",14.55,12,0
+"383","Vitamin K","mcg",0,"Poultry",14.55,12,0
+"384","Vitamin K","mcg",13.6,"Vegetables",14.55,12,0.934707903780069
+"385","Vitamin K","mcg",14.55,"Vegetables (without potatoes)",14.55,12,1
+"386","Zinc","mg",0.62,"Aquatic Foods (USDA)",4.16,12,0.149038461538462
+"387","Zinc","mg",4.16,"Beef",4.16,12,1
+"388","Zinc","mg",1.68,"Cereal Grains",4.16,12,0.403846153846154
+"389","Zinc","mg",1.32,"Dairy and Egg",4.16,12,0.317307692307692
+"390","Zinc","mg",0.1,"Fruits",4.16,12,0.0240384615384615
+"391","Zinc","mg",3.205,"Legumes",4.16,12,0.770432692307692
+"392","Zinc","mg",0.93,"Nut and Seed",4.16,12,0.223557692307692
+"393","Zinc","mg",1.93,"Pork",4.16,12,0.463942307692308
+"394","Zinc","mg",1.83,"Poultry",4.16,12,0.439903846153846
+"395","Zinc","mg",0.355,"Vegetables",4.16,12,0.0853365384615384
+"396","Zinc","mg",0.375,"Vegetables (without potatoes)",4.16,12,0.0901442307692308
