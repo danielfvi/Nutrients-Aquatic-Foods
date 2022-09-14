@@ -19,7 +19,35 @@ p1 = ggplot(data = global_deficiency_combined, aes(x = inadequate_intake, y = nu
   geom_point(aes(color = nutrient), size=1, alpha=.7) +
   geom_boxplot(aes(fill = nutrient), alpha = 0.3) +
   guides(fill = "none", color = "none") +
-  labs(y = "", x = "Inadequate intake (%)") +
+  labs(y = "", x = "Inadequate\nintake (%)", title = "Global") +
   theme_bw() +
   theme(text = element_text(size = 16))
 p1
+
+###Case studies
+p2 = ggplot(data = global_deficiency_combined %>% 
+              filter(iso3c == "MOZ") %>% 
+              mutate(cc = if_else(inadequate_intake>50, "high", "low")), aes(x = inadequate_intake, y = reorder(nutrient, inadequate_intake), fill = cc)) +
+  geom_bar(stat = "identity") +
+  geom_vline(xintercept = 50) +
+  scale_fill_manual(values = c("grey30", "grey80")) +
+  guides(fill = "none") +
+  labs(y = "", x = "Inadequate\nintake (%)", title = "Mozambique") +
+  theme_bw() +
+  theme(text = element_text(size = 16))
+
+p3 = ggplot(data = global_deficiency_combined %>% 
+              filter(iso3c == "PHL") %>% 
+              mutate(cc = if_else(inadequate_intake>50, "high", "low")), aes(x = inadequate_intake, y = reorder(nutrient, inadequate_intake), fill = cc)) +
+  geom_bar(stat = "identity") +
+  geom_vline(xintercept = 50) +
+  scale_fill_manual(values = c("grey30", "grey80")) +
+  guides(fill = "none") +
+  labs(y = "", x = "Inadequate\nintake (%)", title = "Phillipines") +
+  theme_bw() +
+  theme(text = element_text(size = 16))
+
+p = ggarrange(p2, p3, ncol = 2)
+p = ggarrange(p1, p2, p3, ncol = 3)
+p
+

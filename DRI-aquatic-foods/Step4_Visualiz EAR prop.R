@@ -52,25 +52,29 @@ x_labels = x$n_label
 
 # EAR - MUSCLE TISSUE
 # RELEVANCE = 3
-p1 = ggplot(data=filter(afcdEAR3, food_part== "muscle tissue"), aes(x=nutrient)) +
-  geom_violin(mapping=aes(y=ref_proportion_mean), width=1, size=.2, alpha=.3) +
-  geom_point(mapping=aes(y=ref_proportion_mean, color=n_part_label), size=1, alpha=.4) +
-  geom_boxplot(mapping=aes(y=ref_proportion_mean), width=.5,alpha=.3, outlier.colour=rgb(0.1,0.1,0.1, 0.01)) +
-  geom_point(data=usdaEAR3, aes(y=ref_proportion_mean, shape=animal_food_catg), colour="red", size=3) +
-  scale_x_discrete(breaks=x_breaks,
+p1 = ggplot(data=filter(afcdEAR3, food_part== "muscle tissue"), aes(y=nutrient)) +
+  geom_violin(mapping=aes(x=ref_proportion_mean), width=1, size=.2, alpha=.3) +
+  geom_point(mapping=aes(x=ref_proportion_mean, color=n_part_label), size=1, alpha=.4) +
+  geom_boxplot(mapping=aes(x=ref_proportion_mean), width=.5,alpha=.3, outlier.colour=rgb(0.1,0.1,0.1, 0.01)) +
+  geom_point(data=usdaEAR3, aes(x=ref_proportion_mean, shape=animal_food_catg), colour="red", size=3) +
+  scale_y_discrete(breaks=x_breaks,
                    labels=x_labels) +
-  scale_y_log10() +
+  scale_x_log10() +
   #ylim(0, 100) +
-  guides(color = "none") +
-  labs(y = "Proportion of EAR\n(in 100g of muscle tissue)", x = "", shape = "") +
+  guides(color = "none", shape=guide_legend(nrow=2,byrow=TRUE)) +
+  labs(y = "Proportion of EAR (in 100g of muscle tissue)", x = "", shape = "") +
   theme_bw() +
-  theme(legend.position = c(0.95, 0.9),
+  theme(legend.position = "top",
         legend.background = element_rect(fill = NA),
         legend.key = element_rect(colour = NA, fill = NA),
-        text = element_text(size = 16))
+        text = element_text(size = 16),
+        plot.margin = ggplot2::margin(t = 0.2, r = 0.2, b = 0.2, l = 0, "cm"))
 
-p1
+#p1
 
+p5 = ggarrange(p1, p4,
+               ncol = 2)
+p5
 ggsave(filename = "DRI-Aquatic-Foods/Figures/EAR_prop_raw.jpeg",
        plot = p1, width = 17, height = 5)
 
@@ -112,6 +116,7 @@ p3 = ggarrange(p1, p2,
 p3
 ggsave(filename = "DRI-Aquatic-Foods/Figures/EAR_prop_whole_raw.jpeg",
        plot = p3, width = 17, height = 10)
+
 ## Get relevant taxa only 
 # 1) Ray-finned fish - “actinopterygii”
 # 2) Sharks and rays - “chondrichthyes”
@@ -147,18 +152,18 @@ x_labels = x$n_label
 
 # EAR - MUSCLE TISSUE
 # RELEVANCE = 3
-p4 = ggplot(data=filter(afcdEAR3_taxa, food_part== "muscle tissue"), aes(x=nutrient)) +
+p4 = ggplot(data=filter(afcdEAR3_taxa, food_part== "muscle tissue"), aes(y=nutrient)) +
   #geom_violin(mapping=aes(y=ref_proportion_mean), width=1, size=.2, alpha=.3) +
-  geom_point(mapping=aes(y=ref_proportion_mean, color=n_part_label), size=1, alpha=.7) +
-  geom_boxplot(mapping=aes(y=ref_proportion_mean, color=n_part_label, fill=n_part_label),alpha=.3, outlier.colour=rgb(0.1,0.1,0.1, 0.01)) +
+  geom_point(mapping=aes(x=ref_proportion_mean, color=broad_group), size=1, alpha=.7) +
+  geom_boxplot(mapping=aes(x=ref_proportion_mean, color=broad_group, fill=broad_group),alpha=.3, outlier.colour=rgb(0.1,0.1,0.1, 0.01)) +
   #geom_point(data=usdaEAR3, aes(y=ref_proportion_mean, shape=animal_food_catg), colour="red", size=3) +
   # scale_x_discrete(breaks=x_breaks,
   #                  labels=x_labels) +
-  scale_y_log10() +
+  scale_x_log10() +
   #facet_wrap(~broad_group) +
   #ylim(0, 100) +
-  guides(color = "none") +
-  labs(y = "Proportion of EAR\n(in 100g of muscle tissue)", x = "", fill = "") +
+  guides(color = "none", fill=guide_legend(nrow=2,byrow=TRUE)) +
+  labs(y = " ", x = "", fill = "") +
   theme_bw() +
   theme(legend.position = "top",
         legend.background = element_rect(fill = NA),
@@ -171,7 +176,7 @@ ggsave(filename = "DRI-Aquatic-Foods/Figures/EAR_prop_raw_taxa.jpeg",
        plot = p4, width = 17, height = 5)
 
 p5 = ggarrange(p1, p4,
-               ncol = 1)
+               ncol = 2)
 p5
 ggsave(filename = "DRI-Aquatic-Foods/Figures/EAR_prop_raw_taxa_prop.jpeg",
        plot = p5, width = 17, height = 10)
