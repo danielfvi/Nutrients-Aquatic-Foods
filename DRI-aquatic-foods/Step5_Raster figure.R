@@ -9,16 +9,28 @@ rm(list = ls())
 indir <- "DRI-aquatic-foods/data-raw/raw"
 outdir <- "DRI-aquatic-foods/data-raw/processed"
 
-med_all = read_csv("DRI-aquatic-foods/data-raw/raw/med_usda_afcd_nutrients.csv") %>% 
-  mutate(nutrient = recode(nutrient, 
-                           "Monounsaturated fatty acids" = "MUFA",
-                           "Saturated fatty acids" = "SAFA"))
+med_all = read_csv("DRI-aquatic-foods/data-raw/raw/med_usda_afcd_nutrients.csv")
 
-afcd_nutrients_raw <- read_csv("DRI-aquatic-foods/data-raw/raw/afcd_nutrients_raw.csv") %>% 
-  mutate(nutrient = recode(nutrient, 
-                           "Monounsaturated fatty acids" = "MUFA",
-                           "Saturated fatty acids" = "SAFA"))
+afcd_nutrients_raw <- read_csv("DRI-aquatic-foods/data-raw/raw/afcd_nutrients_raw.csv")
 
+nutrient_key <- read.csv(file.path(indir,'ph_nutrient_key_all_foods.csv'), na.strings=c("","NA")) %>% 
+  arrange(desc(order))
+
+nutrient_vec = unique(nutrient_key$PH_nutrient)
+
+med_all$nutrient = factor(med_all$nutrient, levels = nutrient_vec)
+
+nut_cat = nutrient_key %>%
+  rename(nutrient = PH_nutrient) %>%
+  select(nutrient, type) %>% 
+  distinct(nutrient, .keep_all = T) %>% 
+  mutate(col_nut = case_when(type == "Protein" ~ "deepskyblue",
+                             type == "Vitamins" ~ "tan1",
+                             type == "Minerals" ~ "plum3",
+                             type == "Carbohydrates" ~ "olivedrab3",
+                             type == "Fats" ~ "yellow2"))
+
+col_vec = nut_cat$col_nut
 
 ##Raster figure of median values
 p1 = ggplot(med_all %>% filter(!food_catg %in% c("Vegetables (without potatoes)", "Aquatic Foods (USDA)")), aes(y = nutrient, x = food_catg, fill = prop_value))+
@@ -26,13 +38,16 @@ p1 = ggplot(med_all %>% filter(!food_catg %in% c("Vegetables (without potatoes)"
   #geom_text(aes(label = pct(perc_value))) +
   #scale_fill_distiller() +
   scale_fill_gradient(low = "white", high = "dodgerblue", breaks = c(0, 0.5, 1), labels = c(0, 0.5, 1)) +
+  guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", barwidth = 3, barheight = 1)) +
   labs(x = "", y = "", title = "", fill = "Relative\nconcentration") +
   theme(text = element_text(size = 15, face = "bold"),
         axis.text.x = element_text(angle = 90),
+        axis.text.y = element_text(color = col_vec),
         legend.position="top",
         #plot.margin = ggplot2::margin(t = 0.18, r = 0, b = 0.89, l = 0, "cm"),
         plot.title = element_text(hjust = 0.5)
   )
+
 p1
 
 ## Plot by relevant taxa 
@@ -62,11 +77,37 @@ afcd_taxa = afcd_nutrients_raw %>%
   summarise(value = median(value)) %>% 
   left_join(med_AFCD) %>% 
   drop_na(value_med) %>% 
-  mutate(prop_value = value/value_med)
+  mutate(prop_value = value/value_med,
+         prop_value = if_else(is.na(prop_value), 0, prop_value),
+         prop_value = if_else(prop_value>3, 3, prop_value))
+
+p3 = ggplot(afcd_taxa, aes(y = nutrient, x = broad_group, fill = prop_value))+
+  geom_tile(colour = "white", size = 1, height = 1) +
+  #geom_text(aes(label = pct(perc_value))) +
+  #scale_fill_distiller() +
+  scale_fill_gradient(low = "white", high = "red", breaks = c(0, 1.5, 3), labels = c("0", "1.5", ">3")) +
+  guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", barwidth = 3, barheight = 1)) +
+  labs(x = "", y = "", title = "", fill = "Relative\nconcentration") +
+  theme(text = element_text(size = 15, face = "bold"),
+        axis.text.x = element_text(angle = 90),
+        legend.position="top",
+        #plot.margin = ggplot2::margin(t = 0.18, r = 0, b = 0.89, l = 0, "cm"),
+        plot.title = element_text(hjust = 0.5)
+  )
+p3
+
+p = ggarrange(p1, p3, ncol = 2, widths = c(7, 5))
+
+p
+
+
+
+
+
 
 p2 = ggplot(afcd_taxa, aes(x = nutrient, y = prop_value, color = broad_group)) +
   geom_errorbar(aes(ymin = 1, ymax = prop_value),
-                 position = position_dodge(width = .7)) +
+                position = position_dodge(width = .7)) +
   geom_point(position = position_dodge(width = .7), size = 3) +
   geom_hline(lty = 2, yintercept = 1) +
   guides(color = guide_legend(nrow=2,byrow=TRUE)) +
@@ -76,12 +117,6 @@ p2 = ggplot(afcd_taxa, aes(x = nutrient, y = prop_value, color = broad_group)) +
   theme(text = element_text(size = 15, face = "bold"),
         legend.position="top")
 p2
-
-p = ggarrange(p1, p2, ncol = 2, widths = c(3, 2.5))
-
-p
-
-
 
 
 p4 = ggplot(data=filter(afcdEAR3_taxa, food_part== "muscle tissue"), aes(y=nutrient)) +

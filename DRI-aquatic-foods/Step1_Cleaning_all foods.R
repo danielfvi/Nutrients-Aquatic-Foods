@@ -8,8 +8,6 @@ indir <- "DRI-aquatic-foods/data-raw/raw"
 outdir <- "DRI-aquatic-foods/data-raw/processed"
 
 ### Import data
-## DRI data
-dri_orig <- readRDS(file.path(indir,"dietary_reference_intake_data.Rds"))
 
 ## USDA data
 # downloaded from https://fdc.nal.usda.gov/download-datasets.html (SR-legacy)
@@ -25,32 +23,33 @@ usda_catg = read.csv(file.path(indir_FC, "support/food_category.csv"))
 ## AFCD data
 afcd = readRDS("~/AFCD/data-raw/processed/AFCD_data_taxa.Rds") ## LAST UPDATED 8/11/22 
 
+##lysine
+lysine = afcd %>% 
+  filter(nutrient == "Lysine",
+         study_type == "Food Composition Table (FCT)") %>%  
+  mutate(value2 = case_when(food_name %in% c("Fish; herring; Atlantic; raw", "Fish; cod; Atlantic; raw") ~ value/1000,
+                            TRUE ~ value),
+         value3 = value2/1000,
+         value = value3,
+         nutrient_units = "g") %>%
+  select(-value2, -value3)
+  
+afcd = afcd %>% 
+  filter(!nutrient == "Lysine") %>% 
+  rbind(lysine)
+
+# ggplot(data = lysine) +
+#   geom_boxplot(aes(y = value2)) +
+#   facet_wrap(~study_id, scales = "free_y")
+
 ## Nutrient key 
 # from: https://docs.google.com/spreadsheets/d/1p-bPfBcuVpRLMrJ4zixl-jmoj5yLezHJnptnlu66quk/edit#gid=2124066346
-nutrient_key <- read.csv(file.path(indir,'ph_nutrient_key.csv'), na.strings=c("","NA")) %>%
-  select(-(6:7))
+nutrient_key <- read.csv(file.path(indir,'ph_nutrient_key_all_foods.csv'), na.strings=c("","NA"))
 
 # Reformat nutrient key
 nutrient_key = nutrient_key %>%
-  gather("data_type", "nutrient", 3:5) %>%
+  gather("data_type", "nutrient", 4:5) %>%
   drop_na(nutrient)
-
-### CLEAN DRI data
-dri_cleaned = dri_orig %>%
-  mutate(dri_type=recode(dri_type, 
-                         "Estimated Average Requirement (EAR)"="EAR",
-                         "Adequate Intake (AI)" = "AI", 
-                         "Tolerable Upper Intake Level (UL)" = "UL", 
-                         "Recommended Dietary Allowance (RDA)" = "RDA")
-  ) %>%
-  rename(ref_value=value) %>%
-  mutate(ref_units=gsub("/d", "", units)) %>%
-  drop_na(ref_value, ref_units) %>%
-  mutate(nutrient_units=ref_units) %>%
-  merge(nutrient_key %>% filter(data_type=="RDI_name"), by="nutrient") %>% # merge nutrient key
-  mutate(nutrient=PH_nutrient) %>% #rename nutrient
-  select(-PH_nutrient)
-
 
 # combine food_key database with category, filter for relevant animals (beef, chicken, pork) and raw foods
 # nutrients calculated for 100g portions
@@ -122,10 +121,10 @@ usda_raw_cleaned = usda_food_key_all %>%
   select(food_catg, food_name, nutrient, nutrient_orig, value, nutrient_units) %>%
   merge(nutrient_key %>% filter(data_type=="USDA_name"), by="nutrient") %>% # merge nutrient key
   mutate(nutrient=PH_nutrient) %>% #rename nutrient
-  select(-PH_nutrient) %>% 
-  mutate(nutrient = recode(nutrient, 
-                           "Dietary fiber (total)" = "Dietary fiber",
-                           "Folate (vitamin B9)" = "Folate"))
+  select(-PH_nutrient)
+
+# nutrient_key2 = nutrient_key %>% 
+#   mutate(nutrient = recode(nutrient, "Total fatty acids, polyunsaturated2" = "Total fatty acids, polyunsaturated"))
 
 ### CLEAN AFCD
 afcd_raw_cleaned = afcd %>%
@@ -134,10 +133,7 @@ afcd_raw_cleaned = afcd %>%
   select(-PH_nutrient) %>%
   filter(food_prep == "raw") %>%
   mutate(edible_value = case_when(is.na(edible_prop) ~ value, TRUE ~ value * edible_prop)) %>%
-  drop_na(nutrient_units, value, edible_value) %>% 
-  mutate(nutrient = recode(nutrient, 
-                           "Dietary fiber (total)" = "Dietary fiber",
-                           "Folate (vitamin B9)" = "Folate"))
+  drop_na(nutrient_units, value, edible_value)
 
 
 # unit conversion function
@@ -155,9 +151,11 @@ convert_units <- function(value, unit_orig, unit_new) {
 convert_units  <- Vectorize(convert_units)
 
 med_afcd = afcd_raw_cleaned %>% 
+  mutate(value_sqt = sqrt(sqrt(value))) %>% 
   group_by(nutrient, nutrient_units) %>% 
-  summarise(value_med = median(value)) %>% 
-  mutate(food_catg = "Aquatic Foods") 
+  summarise(value_med = median(value_sqt)) %>% 
+  mutate(food_catg = "Aquatic Foods",
+         value_med = value_med^4)
 
 ##units key
 nut_key = med_afcd %>% 
@@ -166,27 +164,29 @@ nut_key = med_afcd %>%
   rename(unit_conversion = nutrient_units)
 
 usda_data = usda_raw_cleaned %>% 
-  left_join(nut_key) %>% 
-  drop_na(unit_conversion) %>% 
-  mutate(value=convert_units(value, nutrient_units, unit_conversion),
+  left_join(nut_key) %>%
+  mutate(unit_conversion = if_else(is.na(unit_conversion), nutrient_units, unit_conversion),
+         value=convert_units(value, nutrient_units, unit_conversion),
          nutrient_units=unit_conversion) %>% 
   select(-unit_conversion)
 
 med_usda = usda_data %>% 
   ungroup() %>% 
+  mutate(value_sqt = sqrt(sqrt(value))) %>% 
   group_by(nutrient, nutrient_units, food_catg) %>% 
-  summarise(value_med = median(value))
+  summarise(value_med = median(value_sqt)) %>% 
+  mutate(value_med = value_med^4)
 
 med_all = rbind(med_afcd, med_usda) %>% 
   group_by(nutrient) %>% 
   mutate(max_value = max(value_med),
-         cc =n(),
-         prop_value = value_med/max_value) %>% 
-  filter(cc > 1)
+         cc =n()) %>% 
+  ungroup() %>% 
+  mutate(prop_value = value_med/max_value)
 
-write.csv(med_all, file.path(indir, "med_usda_afcd_nutrients.csv"))
-write.csv(usda_data, file.path(indir, "usda_nutrients_raw.csv"))
-write.csv(afcd_raw_cleaned, file.path(indir, "afcd_nutrients_raw.csv"))
+write.csv(med_all, file.path(indir, "med_usda_afcd_nutrients.csv"), row.names = F)
+write.csv(usda_data, file.path(indir, "usda_nutrients_raw.csv"), row.names = F)
+write.csv(afcd_raw_cleaned, file.path(indir, "afcd_nutrients_raw.csv"), row.names = F)
 #write.csv(dri_cleaned, file.path(indir, "dri_nutrients.csv"))
 
 ##Visualize distributions
