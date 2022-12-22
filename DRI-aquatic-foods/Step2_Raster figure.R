@@ -14,11 +14,45 @@ med_all = read_csv("DRI-aquatic-foods/data-raw/raw/med_usda_afcd_nutrients.csv")
 afcd_nutrients_raw <- read_csv("DRI-aquatic-foods/data-raw/raw/afcd_nutrients_raw.csv")
 
 nutrient_key <- read.csv(file.path(indir,'ph_nutrient_key_all_foods.csv'), na.strings=c("","NA")) %>% 
-  arrange(desc(order))
+  arrange(desc(nut_order))
+
+####All foods
+vitB7 = med_all %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "B7-Biotin")
+
+vitD = med_all %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Vitamin D") %>% 
+  filter(!food_catg == "Aquatic Foods")
+
+iod = med_all %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Iodine") %>% 
+  filter(!food_catg == "Aquatic Foods")
+
+chrom = med_all %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Chromium") %>% 
+  filter(!food_catg == "Aquatic Foods")
+
+med_all = med_all %>% 
+  rbind(vitB7) %>% 
+  rbind(vitD) %>% 
+  rbind(iod) %>% 
+  rbind(chrom)
 
 nutrient_vec = unique(nutrient_key$PH_nutrient)
 
 med_all$nutrient = factor(med_all$nutrient, levels = nutrient_vec)
+
+med_nut = med_all %>% 
+  group_by(food_catg) %>% 
+  summarise(prop_value = sum(prop_value, na.rm = T))
 
 nut_cat = nutrient_key %>%
   rename(nutrient = PH_nutrient) %>%
@@ -28,27 +62,34 @@ nut_cat = nutrient_key %>%
                              type == "Vitamins" ~ "tan1",
                              type == "Minerals" ~ "plum3",
                              type == "Carbohydrates" ~ "olivedrab3",
-                             type == "Fats" ~ "yellow2"))
+                             type == "Fats" ~ "khaki3")) %>% 
+  filter()
 
-col_vec = nut_cat$col_nut
+col_vec = c(nut_cat$col_nut[1:19], nut_cat$col_nut[21:41])
 
 ##Raster figure of median values
 p1 = ggplot(med_all %>% filter(!food_catg %in% c("Vegetables (without potatoes)", "Aquatic Foods (USDA)")), aes(y = nutrient, x = food_catg, fill = prop_value))+
   geom_tile(colour = "white", size = 1, height = 1) +
   #geom_text(aes(label = pct(perc_value))) +
   #scale_fill_distiller() +
-  scale_fill_gradient(low = "white", high = "dodgerblue", breaks = c(0, 0.5, 1), labels = c(0, 0.5, 1)) +
+  scale_x_discrete(expand=c(0,0)) +
+  scale_fill_gradient(low = "white", high = "dodgerblue", breaks = c(0, 0.5, 1), labels = c(0, 0.5, 1), na.value = "grey50") +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", barwidth = 3, barheight = 1)) +
   labs(x = "", y = "", title = "", fill = "Relative\nconcentration") +
   theme(text = element_text(size = 15, face = "bold"),
         axis.text.x = element_text(angle = 90),
-        axis.text.y = element_text(color = col_vec),
+        #axis.text.y = element_text(color = col_vec),
         legend.position="top",
-        #plot.margin = ggplot2::margin(t = 0.18, r = 0, b = 0.89, l = 0, "cm"),
-        plot.title = element_text(hjust = 0.5)
+        plot.margin = ggplot2::margin(t = 0.18, r = 0, b = 0.89, l = 0, "cm"),
+        plot.title = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = 'grey50'),
+        panel.grid = element_blank()
   )
 
 p1
+
+# ggsave(filename = "Figures/Fig SX - AFCD vs USDA.jpeg",
+#        plot = p1, width = 8, height = 9.5)
 
 ## Plot by relevant taxa 
 # 1) Ray-finned fish - “actinopterygii”
@@ -66,13 +107,13 @@ med_AFCD = med_all %>%
 afcd_taxa = afcd_nutrients_raw %>%
   mutate(broad_group = case_when(class == "actinopterygii" ~ "Ray-finned fish",
                                  class == "chondrichthyes" ~ "Sharks and rays",
-                                 class == "bivalvia" ~ "Bivalves",
+                                 phylum == "mollusca" ~ "Molluscs",
                                  class == "malacostraca" ~ "Crustaceans",
                                  kingdom %in% c("plantae", "chromista") ~ "Seaweed",
                                  TRUE ~ "Other")) %>% 
-  filter(!broad_group %in% c("Other", "Seaweed"),
+  filter(!broad_group %in% c("Other"),
          food_part == "muscle tissue",
-         !nutrient == "Sugar") %>%
+         food_prep == "raw") %>%
   group_by(nutrient, broad_group) %>% 
   summarise(value = median(value)) %>% 
   left_join(med_AFCD) %>% 
@@ -81,26 +122,85 @@ afcd_taxa = afcd_nutrients_raw %>%
          prop_value = if_else(is.na(prop_value), 0, prop_value),
          prop_value = if_else(prop_value>3, 3, prop_value))
 
+vitK = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Vitamin K")
+
+isoleuc = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Isoleucine")
+
+cl = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Choline")
+
+vitB7 = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "B7-Biotin")
+
+methio = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  filter(broad_group == "Sharks and rays") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Methionine")
+
+pheny = afcd_taxa %>% 
+  filter(nutrient == "Vitamin A") %>% 
+  filter(broad_group == "Sharks and rays") %>% 
+  mutate(prop_value = as.double(""),
+         nutrient = "Phenylalanine")
+
+afcd_taxa = afcd_taxa %>% 
+  rbind(vitK) %>% 
+  rbind(cl) %>% 
+  rbind(vitB7) %>% 
+  rbind(methio) %>% 
+  rbind(pheny) %>% 
+  rbind(isoleuc)
+
+afcd_taxa$nutrient = factor(afcd_taxa$nutrient, levels = nutrient_vec)
+
 p3 = ggplot(afcd_taxa, aes(y = nutrient, x = broad_group, fill = prop_value))+
   geom_tile(colour = "white", size = 1, height = 1) +
   #geom_text(aes(label = pct(perc_value))) +
   #scale_fill_distiller() +
-  scale_fill_gradient(low = "white", high = "red", breaks = c(0, 1.5, 3), labels = c("0", "1.5", ">3")) +
+  scale_x_discrete(expand=c(0,0))+
+  scale_fill_gradient(low = "white", high = "red", breaks = c(0, 1.5, 3), labels = c("0", "1.5", ">3"), na.value = "grey50") +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", barwidth = 3, barheight = 1)) +
   labs(x = "", y = "", title = "", fill = "Relative\nconcentration") +
   theme(text = element_text(size = 15, face = "bold"),
         axis.text.x = element_text(angle = 90),
+        axis.text.y = element_blank(),
         legend.position="top",
-        #plot.margin = ggplot2::margin(t = 0.18, r = 0, b = 0.89, l = 0, "cm"),
-        plot.title = element_text(hjust = 0.5)
+        plot.margin = ggplot2::margin(t = 0.18, r = 0.5, b = 0.5, l = 0, "cm"),
+        plot.title = element_text(hjust = 0.5),
+        panel.background = element_rect(fill = 'grey50'),
+        panel.grid = element_blank()
   )
 p3
 
-p = ggarrange(p1, p3, ncol = 2, widths = c(7, 5))
+p = ggarrange(p1, p3, ncol = 2, widths = c(7, 3))
 
 p
 
+ggsave(filename = "Figures/Fig4.jpeg",
+       plot = p, width = 8, height = 9.5)
 
+ggsave(p, filename = "Figures/Fig4.pdf", 
+       width=8, height=9.5, units="in", dpi=600, device=cairo_pdf)
+
+##Stats
+max_taxa = afcd_taxa %>% 
+  group_by(nutrient) %>% 
+  mutate(max_nut = max(prop_value)) %>% 
+  ungroup() %>% 
+  mutate(is_max = if_else(max_nut == prop_value, 1, 0)) %>% 
+  filter(is_max == 1) %>% 
+  count(broad_group)
 
 
 

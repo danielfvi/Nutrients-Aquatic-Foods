@@ -190,7 +190,35 @@ write.csv(afcd_raw_cleaned, file.path(indir, "afcd_nutrients_raw.csv"), row.name
 #write.csv(dri_cleaned, file.path(indir, "dri_nutrients.csv"))
 
 ##Visualize distributions
+all_dta = usda_data %>% 
+  select(nutrient, food_catg, value) %>% 
+  filter(!food_catg %in% c("Vegetables (without potatoes)")) %>% 
+  rbind(afcd_raw_cleaned %>%
+          mutate(food_catg = "Aquatic Foods") %>% 
+          select(nutrient, food_catg, value))
+
+px = ggplot(data = all_dta, aes(x = food_catg, y = value)) +
+  geom_boxplot(alpha = 0.8) +
+  geom_jitter(position=position_jitter(0.2), alpha = 0.2) +
+  facet_wrap(~nutrient, scales = "free_y", ncol = 5) +
+  labs(y = "Nutrient concentration (per 100g)", x = "Food category") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 0.95, vjust = 0.2),
+        text = element_text(size = 15))
+
+ggsave(filename = "Figures/Fig SX - distributions.jpeg",
+       plot = px, width = 12, height = 9.5)
+
 ggplot(data = usda_data, aes(x = food_catg, y = value)) +
+  geom_boxplot() +
+  facet_wrap(~nutrient, scales = "free_y") +
+  labs(y = "Nutrient concentration (per 100g)", x = "Food category") +
+  theme(axis.text.x = element_text(angle = 90),
+        text = element_text(size = 15))
+
+
+ggplot(data = usda_data %>% 
+         mutate(food_catg = recode(food_catg, "Aquatic Foods (USDA)" = "Aquatic Foods")) %>% 
+         filter(!food_catg %in% c("Vegetables (without potatoes)")), aes(x = food_catg, y = value)) +
   geom_boxplot() +
   facet_wrap(~nutrient, scales = "free_y") +
   labs(y = "Nutrient concentration (per 100g)", x = "Food category") +
