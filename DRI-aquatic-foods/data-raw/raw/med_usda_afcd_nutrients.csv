@@ -7,7 +7,6 @@
 "B6-Pyridoxine","mg",0.19,"Aquatic Foods",0.486,12,0.390946502057613
 "B9-Folate","mcg",11,"Aquatic Foods",394,12,0.0279187817258883
 "Calcium","mg",33,"Aquatic Foods",130.499281606449,12,0.252874955277679
-"Chloride","mg",420,"Aquatic Foods",420,1,1
 "Chromium","mcg",0,"Aquatic Foods",0,1,NA
 "Copper","mg",0.08,"Aquatic Foods",0.896494875885964,12,0.0892364275043288
 "Dietary fiber","g",0,"Aquatic Foods",15.3997564908326,12,0
@@ -26,6 +25,7 @@
 "PUFA","g",0.524,"Aquatic Foods",1.324,12,0.395770392749245
 "Selenium","mcg",31,"Aquatic Foods",36.5,12,0.84931506849315
 "Sodium","mg",79,"Aquatic Foods",138,12,0.572463768115942
+"Starch","g",0,"Aquatic Foods",72.51,9,0
 "Sugar","g",0,"Aquatic Foods",9.36,12,0
 "Threonine","mg",767,"Aquatic Foods",897,12,0.855072463768116
 "Tryptophan","mg",215,"Aquatic Foods",252.998517780531,12,0.849807350201579
@@ -35,13 +35,6 @@
 "Vitamin D","mcg",1.8,"Aquatic Foods",1.8,1,1
 "Vitamin E","mg",0.7,"Aquatic Foods",0.8,12,0.875
 "Zinc","mg",0.76,"Aquatic Foods",4.16,12,0.182692307692308
-NA,"g",0.1,"Aquatic Foods",571.128,7,0.000175092098443781
-NA,"iu",118.996848681543,"Aquatic Foods",571.128,7,0.208354079438485
-NA,"kcal",101,"Aquatic Foods",571.128,7,0.176843019428219
-NA,"kj",430,"Aquatic Foods",571.128,7,0.75289602330826
-NA,"mcg",17.1,"Aquatic Foods",571.128,7,0.0299407488338866
-NA,"mg",571.128,"Aquatic Foods",571.128,7,1
-NA,"none",0.574983695331108,"Aquatic Foods",571.128,7,0.00100675101786484
 "B1-Thiamin","mg",0.075,"Aquatic Foods (USDA)",0.641498684721432,12,0.116913723732058
 "B1-Thiamin","mg",0.074,"Beef",0.641498684721432,12,0.115354874082297
 "B1-Thiamin","mg",0.413,"Cereal Grains",0.641498684721432,12,0.643804905351199
@@ -130,6 +123,17 @@ NA,"none",0.574983695331108,"Aquatic Foods",571.128,7,0.00100675101786484
 "Calcium","mg",11,"Poultry",130.499281606449,12,0.0842916517592262
 "Calcium","mg",34,"Vegetables",130.499281606449,12,0.260537832710336
 "Calcium","mg",35.4973590184903,"Vegetables (without potatoes)",130.499281606449,12,0.27201191134171
+"Choline","mg",65,"Aquatic Foods (USDA)",263.4,11,0.246772968868641
+"Choline","mg",70.4,"Beef",263.4,11,0.267274107820805
+"Choline","mg",26.4460245328511,"Cereal Grains",263.4,11,0.100402522903763
+"Choline","mg",263.4,"Dairy and Egg",263.4,11,1
+"Choline","mg",6.1,"Fruits",263.4,11,0.0231586940015186
+"Choline","mg",94.7,"Legumes",263.4,11,0.359529233105543
+"Choline","mg",10.181085621399,"Nut and Seed",263.4,11,0.0386525650015148
+"Choline","mg",70.0991440726283,"Pork",263.4,11,0.266131906122355
+"Choline","mg",58,"Poultry",263.4,11,0.220197418375095
+"Choline","mg",12.3,"Vegetables",263.4,11,0.0466970387243736
+"Choline","mg",12.3,"Vegetables (without potatoes)",263.4,11,0.0466970387243736
 "Copper","mg",0.054,"Aquatic Foods (USDA)",0.896494875885964,12,0.0602345885654219
 "Copper","mg",0.073,"Beef",0.896494875885964,12,0.0814282400977
 "Copper","mg",0.277,"Cereal Grains",0.896494875885964,12,0.308981130233738
@@ -174,6 +178,17 @@ NA,"none",0.574983695331108,"Aquatic Foods",571.128,7,0.00100675101786484
 "Iron","mg",1.08499135939922,"Poultry",6.59953975043882,12,0.16440409489572
 "Iron","mg",0.81,"Vegetables",6.59953975043882,12,0.122735831683738
 "Iron","mg",0.819954266521384,"Vegetables (without potatoes)",6.59953975043882,12,0.124244159066829
+"Isoleucine","g",0.853,"Aquatic Foods (USDA)",0.985996577070856,11,0.865114565137787
+"Isoleucine","g",0.933,"Beef",0.985996577070856,11,0.946250749441449
+"Isoleucine","g",0.318,"Cereal Grains",0.985996577070856,11,0.322516332607053
+"Isoleucine","g",0.661,"Dairy and Egg",0.985996577070856,11,0.670387722809
+"Isoleucine","g",0.016,"Fruits",0.985996577070856,11,0.0162272368607322
+"Isoleucine","g",0.985996577070856,"Legumes",0.985996577070856,11,1
+"Isoleucine","g",0.206992753447019,"Nut and Seed",0.985996577070856,11,0.209932527414996
+"Isoleucine","g",0.964,"Pork",0.985996577070856,11,0.977691020859117
+"Isoleucine","g",0.838,"Poultry",0.985996577070856,11,0.849901530580851
+"Isoleucine","g",0.072,"Vegetables",0.985996577070856,11,0.073022565873295
+"Isoleucine","g",0.076,"Vegetables (without potatoes)",0.985996577070856,11,0.0770793750884781
 "Leucine","mg",1502,"Aquatic Foods (USDA)",1781.99663299222,12,0.842874768779971
 "Leucine","mg",1691,"Beef",1781.99663299222,12,0.948935575237637
 "Leucine","mg",620,"Cereal Grains",1781.99663299222,12,0.347924338644196
@@ -306,6 +321,14 @@ NA,"none",0.574983695331108,"Aquatic Foods",571.128,7,0.00100675101786484
 "Sodium","mg",77,"Poultry",138,12,0.557971014492754
 "Sodium","mg",13,"Vegetables",138,12,0.0942028985507247
 "Sodium","mg",13,"Vegetables (without potatoes)",138,12,0.0942028985507247
+"Starch","g",0,"Aquatic Foods (USDA)",72.51,9,0
+"Starch","g",72.51,"Cereal Grains",72.51,9,1
+"Starch","g",0,"Fruits",72.51,9,0
+"Starch","g",40.4773270258161,"Legumes",72.51,9,0.558230961602759
+"Starch","g",1.67,"Nut and Seed",72.51,9,0.0230313060267549
+"Starch","g",0.06,"Poultry",72.51,9,0.000827472072817542
+"Starch","g",0,"Vegetables",72.51,9,0
+"Starch","g",0,"Vegetables (without potatoes)",72.51,9,0
 "Sugar","g",0,"Aquatic Foods (USDA)",9.36,12,0
 "Sugar","g",0,"Beef",9.36,12,0
 "Sugar","g",0.727476820690195,"Cereal Grains",9.36,12,0.0777218825523712
@@ -383,6 +406,17 @@ NA,"none",0.574983695331108,"Aquatic Foods",571.128,7,0.00100675101786484
 "Vitamin E","mg",0.2,"Poultry",0.8,12,0.25
 "Vitamin E","mg",0.3,"Vegetables",0.8,12,0.375
 "Vitamin E","mg",0.35,"Vegetables (without potatoes)",0.8,12,0.4375
+"Vitamin K","ug",0.1,"Aquatic Foods (USDA)",14.548389051396,11,0.00687361326719568
+"Vitamin K","ug",1.5,"Beef",14.548389051396,11,0.103104199007935
+"Vitamin K","ug",0.9,"Cereal Grains",14.548389051396,11,0.0618625194047611
+"Vitamin K","ug",0.3,"Dairy and Egg",14.548389051396,11,0.020620839801587
+"Vitamin K","ug",2.14956389205764,"Fruits",14.548389051396,11,0.147752708871322
+"Vitamin K","ug",5.6,"Legumes",14.548389051396,11,0.384922342962958
+"Vitamin K","ug",0.2,"Nut and Seed",14.548389051396,11,0.0137472265343914
+"Vitamin K","ug",0,"Pork",14.548389051396,11,0
+"Vitamin K","ug",0,"Poultry",14.548389051396,11,0
+"Vitamin K","ug",13.5955872409955,"Vegetables",14.548389051396,11,0.934508088350231
+"Vitamin K","ug",14.548389051396,"Vegetables (without potatoes)",14.548389051396,11,1
 "Zinc","mg",0.62,"Aquatic Foods (USDA)",4.16,12,0.149038461538462
 "Zinc","mg",4.16,"Beef",4.16,12,1
 "Zinc","mg",1.68,"Cereal Grains",4.16,12,0.403846153846154

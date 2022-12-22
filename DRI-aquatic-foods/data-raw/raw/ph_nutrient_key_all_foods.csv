@@ -1,6 +1,6 @@
-order,type,PH_nutrient,USDA_name,AFCD_name
+nut_order,type,PH_nutrient,USDA_name,AFCD_name
 12,Carbohydrates,Dietary fiber,"Fiber, total dietary","Fibre, total; gravimetrically determined"
-14,Carbohydrates,Starch,Starch,Starch
+14,Carbohydrates,Starch,Starch,"Starch, total"
 13,Carbohydrates,Sugar,"Sugars, total including NLEA","Sugars, total"
 10,Fats,PUFA,"Fatty acids, total polyunsaturated","Total fatty acids, polyunsaturated"
 11,Fats,MUSA,"Fatty acids, total monounsaturated","Total fatty acids, monounsaturated"
@@ -12,7 +12,6 @@ order,type,PH_nutrient,USDA_name,AFCD_name
 33,Minerals,Manganese,"Manganese, Mn",Manganese
 34,Minerals,Magnesium,"Magnesium, Mg",Magnesium
 35,Minerals,Potassium,"Potassium, K",Potassium
-36,Minerals,Chloride,,Chloride
 37,Minerals,Choline,"Choline, total",
 38,Minerals,Chromium,"Chromium, Cr",Chromium
 39,Minerals,Copper,"Copper, Cu",Copper
@@ -39,7 +38,7 @@ order,type,PH_nutrient,USDA_name,AFCD_name
 19,Vitamins,B1-Thiamin,,Thiamin
 22,Vitamins,B5-Pantothenic acid,Pantothenic acid,Pantothenic acid
 23,Vitamins,B6-Pyridoxine,Vitamin B-6,"Vitamin B6, total; thru analysis"
-24,Vitamins,B7-Biotine,,
+24,Vitamins,B7-Biotin,Biotin,
 18,Vitamins,Vitamin C,"Vitamin C, total ascorbic acid",Vitamin C
 18,Vitamins,Vitamin C,,Vitamin C; unknown/variable methods
 16,Vitamins,Vitamin E,Vitamin E (alpha-tocopherol),Vitamin E; unknown/variable methods
